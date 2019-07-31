@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[记录一下安装hexo的过程]]></title>
+    <url>%2Fjialin43.github.io%2F2019%2F07%2F31%2Fmy%20first%20blog%2F</url>
+    <content type="text"><![CDATA[首先你的电脑需要安装node.js和Git 安装好Git之后需要配置本机与Github之间的ssh方便更新同步博客到Github上，在一个地方新建一个文件夹作为我们博客的根目录,在文件夹内右键选择Git bash here 123456git config --global user.name "你的GitHub注册名"# 回车git config --global user.email "你的Github注册邮箱"# 回车ssh-keygen -t rsa -C "你的GitHub注册邮箱"# 三个回车，保持默认就行，如果成功会出现一堆字符一样的画面 并且会在C:\Users\你的用户名.ssh\下生成id_rsa.pub这个文件，用记事本打开复制其中的内容到Github网站设置页面中的SSH and GPG keys标签，点击右上角的New SSH Key添加一个新key，然后在bash中运行 1ssh git@github.com 如果提示如下那么说明SSH Key配置正确 用以下npm命令安装hexo相关包到你的电脑上 1npm install -g hexo-cli 初始化hexo博客系统 1hexo init 生成静态文件1hexo g 本地运行博客系统1hexo s 用浏览器访问http:localhost:4000即可成功打开本地的博客页面]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Fjialin43.github.io%2F2019%2F07%2F31%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
