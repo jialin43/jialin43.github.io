@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/jialin43.github.io/images/apple-touch-icon-next.png?v=7.2.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/jialin43.github.io/images/favicon-32x32-next.png?v=7.2.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/jialin43.github.io/images/favicon-16x16-next.png?v=7.2.0">
+  <link rel="mask-icon" href="/jialin43.github.io/images/logo.svg?v=7.2.0" color="#222">
+
+<link rel="stylesheet" href="/jialin43.github.io/css/main.css?v=7.2.0">
+
+
+<link rel="stylesheet" href="/jialin43.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/jialin43.github.io/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/jialin43.github.io/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="Hello World Vue 引入Vue.js文件 1&amp;lt;script src=&amp;quot;lib/vue.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  在页面创建一个需要被控制的div区域 123&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;        &amp;lt;p&amp;gt;&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;&amp;lt;/p&amp;gt;&amp;l">
+<meta name="keywords" content="coding blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑马Vue学习笔记">
+<meta property="og:url" content="jialin43.github.io/2019/08/12/vue study 01/index.html">
+<meta property="og:site_name" content="码农日常">
+<meta property="og:description" content="Hello World Vue 引入Vue.js文件 1&amp;lt;script src=&amp;quot;lib/vue.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  在页面创建一个需要被控制的div区域 123&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;        &amp;lt;p&amp;gt;&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;&amp;lt;/p&amp;gt;&amp;l">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-12T08:10:00.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="黑马Vue学习笔记">
+<meta name="twitter:description" content="Hello World Vue 引入Vue.js文件 1&amp;lt;script src=&amp;quot;lib/vue.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  在页面创建一个需要被控制的div区域 123&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;        &amp;lt;p&amp;gt;&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;&amp;lt;/p&amp;gt;&amp;l">
+  <link rel="canonical" href="jialin43.github.io/2019/08/12/vue study 01/">
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>黑马Vue学习笔记 | 码农日常</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/jialin43.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">码农日常</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">自由 平等 随意 突破</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/jialin43.github.io/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/jialin43.github.io/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+        </li>
+      
+    </ul>
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+    </div>
+</nav>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="jialin43.github.io/jialin43.github.io/2019/08/12/vue study 01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johnny Yang">
+      <meta itemprop="description" content="照塔层层不如暗处一灯">
+      <meta itemprop="image" content="/jialin43.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码农日常">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">黑马Vue学习笔记
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-12 16:03:35 / 修改时间：16:10:00" itemprop="dateCreated datePublished" datetime="2019-08-12T16:03:35+08:00">2019-08-12</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon"
+              >
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          <br/>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Hello-World-Vue"><a href="#Hello-World-Vue" class="headerlink" title="Hello World Vue"></a>Hello World Vue</h2><ul>
+<li><p>引入<code>Vue.js</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;lib/vue.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在页面创建一个需要被控制的<code>div</code>区域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; msg &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个Vue实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">      var vm = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;, // 表示当面new的vue实例要控制页面的哪个区域</span><br><span class="line">        这里的data就是MVVM中的M,专门用来保存每个页面的数据</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg:&apos;欢迎学习vue&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>‘el’表示当前创建的Vue实例控制页面的哪个区域<br><code>data</code>中存放<code>el</code>要用到的数据<br>通过Vue提供的命令,很方便把数据渲染到页面中,我们不需再手动操作绑定DOM元素赋值了,(Vue等框架不提倡我们手动操作DOM元素)</p>
+</blockquote>
+<p>==我们nue出来的vm对象就是MVVM中的VM调度者==</p>
+<h3 id="属性绑定相关"><a href="#属性绑定相关" class="headerlink" title="属性绑定相关"></a>属性绑定相关</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    [v-cloak] &#123;</span><br><span class="line">      display: none;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过<strong>v-cloak</strong>能够解决插值表达式闪烁的问题,默认v-text没用闪烁问题</li>
+<li><strong>v-html</strong>能够将内容解析成HTML</li>
+<li><strong>v-bind</strong> 是Vue中提供绑定属性的指令,可以缩写为:要绑定的属性,v-bind可以写合法的js表达式</li>
+</ul>
+<hr>
+<h3 id="按钮事件绑定"><a href="#按钮事件绑定" class="headerlink" title="按钮事件绑定"></a>按钮事件绑定</h3><ul>
+<li>Vue提供<code>v-on</code>: 事件绑定机制,缩写为@事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; v-on:click=&quot;show&quot; value=&quot;Start&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">      var vm = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;, // 表示当面new的vue实例要控制页面的哪个区域</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg:&apos;欢迎学习vue&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">          show:function()&#123;</span><br><span class="line">            alert(&apos;Hello&apos;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="走马灯Demo"><a href="#走马灯Demo" class="headerlink" title="走马灯Demo"></a>走马灯Demo</h3><ol>
+<li>给按钮绑定一个点击事件</li>
+<li>在开始按钮的处理函数中,写业务逻辑代码:拿到msg字符串调用字符串<code>substring</code>方法进行字符串截取操作,把第一个字符截取出来,放到最后一个位置,为了实现跑马灯效果需要把上述代码放入定时器中执行</li>
+</ol>
+<ul>
+<li>在vm实例中想要获取<code>data</code>上的数据或者调用methods中的方法必须通过<strong>this.属性名</strong>或<strong>this.方法名</strong>来进行访问,this就表示我们<code>new</code>出来的vm实例</li>
+<li>VM实例会监听自己<code>data</code>中的数据变化,只要一发生数据变化就会自动把最新数据从<code>data</code>中渲染到页面中</li>
+</ul>
+<hr>
+<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><ul>
+<li><code>stop</code>阻止冒泡</li>
+<li><code>prevent</code>阻止默认事件</li>
+<li><code>capture</code>添加事件侦听器时使用事件捕获模式</li>
+<li><code>.self</code>只当事件在该元素本身(比如不是子元素)触发时触发回调</li>
+<li><code>.once</code> 事件只触发一次<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot; class=&quot;inner&quot; @click=&quot;divHandler&quot;&gt;</span><br><span class="line">      &lt;!-- 使用.stop阻止冒泡 --&gt;</span><br><span class="line">      &lt;input type=&quot;button&quot; value=&quot;Button&quot; @click.stop=&quot;btnHander&quot; /&gt;</span><br><span class="line">      &lt;!-- 使用.prevent阻止默认行为 --&gt;</span><br><span class="line">      &lt;a href=&quot;http://www.baidu.com&quot; @click.prevent=&quot;linkClick&quot;&gt;baidu一下&lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- 使用.capture 实现捕获触发事件的机制--&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot; class=&quot;inner&quot; @click=&quot;divHandler&quot;&gt;</span><br><span class="line">      &lt;!-- 使用.stop阻止冒泡 --&gt;</span><br><span class="line">      &lt;input type=&quot;button&quot; value=&quot;Button&quot; @click.stop=&quot;btnHander&quot; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h3 id="v-model-双向数据绑定指令"><a href="#v-model-双向数据绑定指令" class="headerlink" title="v-model 双向数据绑定指令"></a>v-model 双向数据绑定指令</h3><ul>
+<li><code>v-bind</code> 只能实现数据的单向绑定,从Model自动绑定到View中,无法实现数据的双向绑定</li>
+<li>使用<code>v-model</code>可以实现表单元素和Model中数据的双向绑定</li>
+<li><strong>v-model 只能运用在表单元素中</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;msg&quot; style=&quot;width: 100%&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="v-model-实例-简易计算器"><a href="#v-model-实例-简易计算器" class="headerlink" title="v-model 实例 简易计算器"></a>v-model 实例 简易计算器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">     &lt;input type=&quot;text&quot; v-model=&quot;x1&quot; /&gt;</span><br><span class="line">     &lt;select v-model=&quot;opt&quot;&gt;</span><br><span class="line">       &lt;option value=&quot;+&quot;&gt;+&lt;/option&gt;</span><br><span class="line">       &lt;option value=&quot;-&quot;&gt;-&lt;/option&gt;</span><br><span class="line">       &lt;option value=&quot;*&quot;&gt;*&lt;/option&gt;</span><br><span class="line">       &lt;option value=&quot;/&quot;&gt;/&lt;/option&gt;</span><br><span class="line">     &lt;/select&gt;</span><br><span class="line">     &lt;input type=&quot;text&quot; v-model=&quot;x2&quot; /&gt;</span><br><span class="line">     &lt;input type=&quot;button&quot; value=&quot;=&quot; @click=&quot;calc&quot; /&gt;</span><br><span class="line">     &lt;input type=&quot;text&quot; v-model=&quot;ans&quot; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">     var vm = new Vue(&#123;</span><br><span class="line">       el: &quot;#app&quot;,</span><br><span class="line">       data: &#123;</span><br><span class="line">         x1: 0,</span><br><span class="line">         x2: 0,</span><br><span class="line">         ans: 0,</span><br><span class="line">         opt: &quot;+&quot;</span><br><span class="line">       &#125;,</span><br><span class="line">       methods: &#123;</span><br><span class="line">         calc() &#123;</span><br><span class="line">           switch (this.opt) &#123;</span><br><span class="line">             case &quot;+&quot;:</span><br><span class="line">             this.ans = parseInt(this.x1)+parseInt(this.x2)</span><br><span class="line">               break;</span><br><span class="line">             case &quot;-&quot;:</span><br><span class="line">             this.ans = parseInt(this.x1)-parseInt(this.x2)</span><br><span class="line">               break;</span><br><span class="line">             case &quot;*&quot;:</span><br><span class="line">             this.ans = parseInt(this.x1)*parseInt(this.x2)</span><br><span class="line">               break;</span><br><span class="line">             case &quot;/&quot;:</span><br><span class="line">             this.ans = parseInt(this.x1)/parseInt(this.x2)</span><br><span class="line">               break;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">         &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">   &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Vue中的样式class"><a href="#Vue中的样式class" class="headerlink" title="Vue中的样式class"></a>Vue中的样式class</h3><ol>
+<li><p>直接传递一个数组,注意:这里的<code>class</code>需要用<code>v-bind</code>进行绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        .red &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">        .thin &#123;</span><br><span class="line">            font-weight: 200;</span><br><span class="line">        &#125;</span><br><span class="line">        .italic &#123;</span><br><span class="line">            font-style: italic;</span><br><span class="line">        &#125;</span><br><span class="line">        .active &#123;</span><br><span class="line">            letter-spacing: 0.5em;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;h1 :class=[&apos;thin&apos;,&apos;active&apos;]&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在数组中使用三元表达式 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class=[&apos;thin&apos;,flag?&apos;active&apos;:&apos;&apos;]&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>其中的<code>flag</code>是<code>data</code>中创建的布尔属性</p>
+<ol start="3">
+<li><p>在数组中使用对象来代替三元表达式,提高代码可读性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class=[&apos;thin&apos;,&#123;&apos;active&apos;:flag&#125;]&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直接绑定对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1:class=&#123;red:flag&#125;&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>当为<code>class</code>使用<code>v-bind</code>绑定对象的时候,对象的属性是类名,由于对象属性可带引号也可不带引号,所以red可以不写引号,属性的值是一个标识符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class=&quot;classList&quot;&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br><span class="line">classList:&#123;thin:true,red:true&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="内联样式的使用"><a href="#内联样式的使用" class="headerlink" title="内联样式的使用"></a>内联样式的使用</h3><ol>
+<li><p>直接在元素上通过<code>:style</code>书写样式对象</p>
+</li>
+<li><p>将样式对象定义到<code>data</code>中,并直接引用到<code>:style</code>中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">h1 :style=&quot;styleList&quot;&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br><span class="line">data:&#123;</span><br><span class="line">    styleList:&#123;color:&apos;blue&apos;,&apos;font-size&apos;:&apos;120px&apos;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>:style</code>中通过数组,引用多个<code>data</code>上的样式对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :style=&quot;[styleList,style2List]&quot;&gt;这是一个特别大的H1,无法想象的大 &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">    styleList:&#123;color:&apos;blue&apos;,&apos;font-size&apos;:&apos;120px&apos;&#125;,</span><br><span class="line">    style2List:&#123;&apos;font-weight&apos;:50&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-for循环的使用"><a href="#v-for循环的使用" class="headerlink" title="v-for循环的使用"></a>v-for循环的使用</h3><ol>
+<li>简单数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      &lt;p v-for=&quot;item in list&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      var vm = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">          list: [1, 2, 3, 4, 5, 6, 7, 8]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>其中item可替换成(item,index),index为索引值</strong></p>
+<ol start="2">
+<li><p>循环对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-for=&quot;(value,key) in user&quot;&gt;&#123;&#123; key &#125;&#125;---&#123;&#123; value &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">      var vm = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">          list: [1, 2, 3, 4, 5, 6, 7, 8],</span><br><span class="line">          user:&#123;</span><br><span class="line">              id:1,</span><br><span class="line">              name:&apos;john mayer&apos;,</span><br><span class="line">              gender:&apos;man&apos;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">```    </span><br><span class="line">**在遍历对象身上的键值对的时候,除了key和value,在第三个位置还有index索引</span><br><span class="line">**</span><br><span class="line">3. 循环迭代数据</span><br></pre></td></tr></table></figure>
+
+<p v-for="count in 10"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; 用v-for 迭代数字注意count值从**1**开始 </span><br><span class="line">### v-for 使用注意事项 </span><br><span class="line"></span><br><span class="line">- 在vue 2.2.0+ 版本中,当在组件中使用`v-for`时,key值是必须的,用`v-bind:key`的形式指定key的值</span><br><span class="line"></span><br><span class="line">- `v-for` 循环的时候,key只能用string</span><br><span class="line">或者number</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p v-for="item in list" :key="item">
+```
+### `v-if`与`v-show`的使用
+- `v-if` 每次都会删除或创建节点,有较高的**切换性能消耗**
+- `v-show` 每次不会删除或创建节点,只是切换了元素的`display:none`的样式,有较高的**初始渲染消耗**
+- 如果元素涉及到频繁的切换,最好不用`v-if`而是推荐使用`v-show`,如果元素可能永远也不会被显示出来给用户看到,则推荐使用`v-if`
+</p>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/jialin43.github.io/2019/08/02/springbootMybatis/" rel="next" title="SpringBoot集成MyBatis">
+                <i class="fa fa-chevron-left"></i> SpringBoot集成MyBatis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Johnny Yang</p>
+  <div class="site-description motion-element" itemprop="description">照塔层层不如暗处一灯</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/jialin43.github.io/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:zensoft1024@gmail.com" title="E-Mail &rarr; mailto:zensoft1024@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World-Vue"><span class="nav-number">1.</span> <span class="nav-text">Hello World Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性绑定相关"><span class="nav-number">1.1.</span> <span class="nav-text">属性绑定相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮事件绑定"><span class="nav-number">1.2.</span> <span class="nav-text">按钮事件绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#走马灯Demo"><span class="nav-number">1.3.</span> <span class="nav-text">走马灯Demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件修饰符"><span class="nav-number">1.4.</span> <span class="nav-text">事件修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model-双向数据绑定指令"><span class="nav-number">1.5.</span> <span class="nav-text">v-model 双向数据绑定指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model-实例-简易计算器"><span class="nav-number">1.6.</span> <span class="nav-text">v-model 实例 简易计算器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue中的样式class"><span class="nav-number">1.7.</span> <span class="nav-text">Vue中的样式class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联样式的使用"><span class="nav-number">1.8.</span> <span class="nav-text">内联样式的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for循环的使用"><span class="nav-number">1.9.</span> <span class="nav-text">v-for循环的使用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Johnny Yang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/jialin43.github.io/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/jialin43.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/jialin43.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script src="/jialin43.github.io/js/utils.js?v=7.2.0"></script>
+  <script src="/jialin43.github.io/js/motion.js?v=7.2.0"></script>
+
+  
+  <script src="/jialin43.github.io/js/affix.js?v=7.2.0"></script>
+  <script src="/jialin43.github.io/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+  
+  <script src="/jialin43.github.io/js/scrollspy.js?v=7.2.0"></script>
+<script src="/jialin43.github.io/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/jialin43.github.io/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/jialin43.github.io/js/local-search.js?v=7.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
