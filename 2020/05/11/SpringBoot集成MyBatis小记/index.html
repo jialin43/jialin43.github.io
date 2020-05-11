@@ -57,21 +57,21 @@
   };
 </script>
 
-  <meta name="description" content="参考MyBatis官网 1. 添加maven依赖添加到pom.xml 12345678910111213141516&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.mybatis.spring.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mybatis-spring-boot-starter&amp;lt;/artifactId&amp;g">
+  <meta name="description" content="SpringBoot集成MyBatis小记参考MyBatis官网 1. 添加maven依赖添加到pom.xml 12345678910111213141516&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.mybatis.spring.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mybatis-spring-boot-sta">
 <meta name="keywords" content="coding blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot集成MyBatis">
-<meta property="og:url" content="jialin43.github.io/2019/08/02/springbootMybatis/index.html">
+<meta property="og:title" content="码农日常">
+<meta property="og:url" content="jialin43.github.io/2020/05/11/SpringBoot集成MyBatis小记/index.html">
 <meta property="og:site_name" content="码农日常">
-<meta property="og:description" content="参考MyBatis官网 1. 添加maven依赖添加到pom.xml 12345678910111213141516&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.mybatis.spring.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mybatis-spring-boot-starter&amp;lt;/artifactId&amp;g">
+<meta property="og:description" content="SpringBoot集成MyBatis小记参考MyBatis官网 1. 添加maven依赖添加到pom.xml 12345678910111213141516&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.mybatis.spring.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mybatis-spring-boot-sta">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8646930-cd7e47f5239f4bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-02T13:26:24.743Z">
+<meta property="og:updated_time" content="2020-05-11T01:37:09.090Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot集成MyBatis">
-<meta name="twitter:description" content="参考MyBatis官网 1. 添加maven依赖添加到pom.xml 12345678910111213141516&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.mybatis.spring.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mybatis-spring-boot-starter&amp;lt;/artifactId&amp;g">
+<meta name="twitter:title" content="码农日常">
+<meta name="twitter:description" content="SpringBoot集成MyBatis小记参考MyBatis官网 1. 添加maven依赖添加到pom.xml 12345678910111213141516&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.mybatis.spring.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mybatis-spring-boot-sta">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/8646930-cd7e47f5239f4bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-  <link rel="canonical" href="jialin43.github.io/2019/08/02/springbootMybatis/">
+  <link rel="canonical" href="jialin43.github.io/2020/05/11/SpringBoot集成MyBatis小记/">
 
 
 <script id="page.configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>SpringBoot集成MyBatis | 码农日常</title>
+  <title> | 码农日常</title>
   
 
 
@@ -224,7 +224,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="jialin43.github.io/2019/08/02/springbootMybatis/">
+    <link itemprop="mainEntityOfPage" href="jialin43.github.io/2020/05/11/SpringBoot集成MyBatis小记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Johnny Yang">
@@ -238,7 +238,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot集成MyBatis
+          <h1 class="post-title" itemprop="name headline">
 
               
             
@@ -258,7 +258,7 @@
                 
               
 
-              <time title="创建时间：2019-08-02 17:56:43 / 修改时间：21:26:24" itemprop="dateCreated datePublished" datetime="2019-08-02T17:56:43+08:00">2019-08-02</time>
+              <time title="创建时间：2020-05-11 10:02:12 / 修改时间：09:37:09" itemprop="dateCreated datePublished" datetime="2020-05-11T10:02:12+08:00">2020-05-11</time>
             </span>
           
             
@@ -286,7 +286,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/" target="_blank" rel="noopener">参考MyBatis官网</a></p>
+        <h1 id="SpringBoot集成MyBatis小记"><a href="#SpringBoot集成MyBatis小记" class="headerlink" title="SpringBoot集成MyBatis小记"></a>SpringBoot集成MyBatis小记</h1><p><a href="http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/" target="_blank" rel="noopener">参考MyBatis官网</a></p>
 <h3 id="1-添加maven依赖"><a href="#1-添加maven依赖" class="headerlink" title="1. 添加maven依赖"></a>1. 添加maven依赖</h3><p>添加到pom.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -319,8 +319,8 @@
     <footer class="post-footer">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/07/31/my first blog/" rel="next" title="记录一下安装hexo的过程">
-                <i class="fa fa-chevron-left"></i> 记录一下安装hexo的过程
+              <a href="/2020/05/11/sklearn.impute.SimpleImputer 中fit和transform方法的简介/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -328,10 +328,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/08/12/vue-study-01/" rel="prev" title="黑马Vue学习笔记">
-                黑马Vue学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
     </footer>
@@ -417,7 +413,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-添加maven依赖"><span class="nav-number">1.</span> <span class="nav-text">1. 添加maven依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置MySQL连接"><span class="nav-number">2.</span> <span class="nav-text">2. 配置MySQL连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在数据库中添加一个user的表"><span class="nav-number">3.1.</span> <span class="nav-text">在数据库中添加一个user的表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写一个User的model"><span class="nav-number">3.2.</span> <span class="nav-text">编写一个User的model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写一个mapper"><span class="nav-number">3.3.</span> <span class="nav-text">编写一个mapper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在Controller中添加一个测试方法"><span class="nav-number">3.4.</span> <span class="nav-text">在Controller中添加一个测试方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">4.</span> <span class="nav-text">注意点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot集成MyBatis小记"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot集成MyBatis小记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-添加maven依赖"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 添加maven依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置MySQL连接"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 配置MySQL连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">1.0.3.</span> <span class="nav-text">验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在数据库中添加一个user的表"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">在数据库中添加一个user的表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写一个User的model"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">编写一个User的model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写一个mapper"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">编写一个mapper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在Controller中添加一个测试方法"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">在Controller中添加一个测试方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.0.4.</span> <span class="nav-text">注意点</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
