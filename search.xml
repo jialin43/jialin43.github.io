@@ -13,7 +13,7 @@
   <entry>
     <title><![CDATA[记录一下安装hexo的过程]]></title>
     <url>%2F2020%2F05%2F11%2F%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E5%AE%89%E8%A3%85hexo%E7%9A%84%E8%BF%87%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[记录一下安装hexo的过程 首先你的电脑需要安装node.js和Git 安装好Git之后需要配置本机与Github之间的ssh方便更新同步博客到Github上，在一个地方新建一个文件夹作为我们博客的根目录,在文件夹内右键选择Git bash here 123456git config --global user.name "你的GitHub注册名"# 回车git config --global user.email "你的Github注册邮箱"# 回车ssh-keygen -t rsa -C "你的GitHub注册邮箱"# 三个回车，保持默认就行，如果成功会出现一堆字符一样的画面 并且会在C:\Users\你的用户名.ssh\下生成id_rsa.pub这个文件，用记事本打开复制其中的内容到Github网站设置页面中的SSH and GPG keys标签，点击右上角的New SSH Key添加一个新key，然后在bash中运行 1ssh git@github.com 如果提示如下那么说明SSH Key配置正确 用以下npm命令安装hexo相关包到你的电脑上 1npm install -g hexo-cli 初始化hexo博客系统 1hexo init 生成静态文件1hexo g 本地运行博客系统1hexo s 用浏览器访问http:localhost:4000即可成功打开本地的博客页面]]></content>
+    <content type="text"><![CDATA[记录一下安装hexo的过程1. 首先你的电脑需要安装node.js和Git2. 安装好Git之后需要配置本机与Github之间的ssh方便更新同步博客到Github上，在一个地方新建一个文件夹作为我们博客的根目录,在文件夹内右键选择Git bash here123456git config --global user.name "你的GitHub注册名"# 回车git config --global user.email "你的Github注册邮箱"# 回车ssh-keygen -t rsa -C "你的GitHub注册邮箱"# 三个回车，保持默认就行，如果成功会出现一堆字符一样的画面 并且会在C:\Users\你的用户名.ssh\下生成id_rsa.pub这个文件，用记事本打开复制其中的内容到Github网站设置页面中的SSH and GPG keys标签，点击右上角的New SSH Key添加一个新key，然后在bash中运行 1ssh git@github.com 如果提示如下那么说明SSH Key配置正确 3. 用以下npm命令安装hexo相关包到你的电脑上1npm install -g hexo-cli 4. 初始化hexo博客系统1hexo init 5. 生成静态文件1hexo g 6. 本地运行博客系统1hexo s 用浏览器访问http:localhost:4000即可成功打开本地的博客页面]]></content>
   </entry>
   <entry>
     <title><![CDATA[黑马Vue学习笔记04]]></title>
